@@ -35,12 +35,34 @@ vector<vector<int>> FindSubStr(vector<int> num)
   return temp;
 }
 
+//方法二
+vector<vector<int>> res;
+vector<int> track;
+
+//思想就是先选择第一个字符固定，再枚举后面每个字符的情况
+//最后撤销回来选择另一个字符为第一个继续固定
+void SubStrSet(vector<int> arr,int start,vector<int> track)
+{
+  //因为track只要是子集即可，没有其他要求
+  res.push_back(track);
+
+  //选择列表
+  for(size_t i = start;i < arr.size();i++)
+  {
+    //做选择
+    track.push_back(arr[i]);
+    SubStrSet(arr,i + 1,track);
+    //撤销选择
+    track.pop_back();
+  }
+}
 
 int main()
 {
   vector<int> arr = {1,2,3};
-  vector<vector<int>> ret = FindSubStr(arr);
-  for(auto e : ret)
+  //vector<vector<int>> ret = FindSubStr(arr);
+  SubStrSet(arr,0,track);
+  for(auto e : res)
   {
     cout<<"[";
     for(auto m : e)
