@@ -19,7 +19,7 @@ class LZ77
     void MergeFile(FILE* fOut, ULL fileSize);
 
     //在处理大��64k文件时，需要重新填充缓冲区的右窗口
-    void FillWindow(FILE* fIn, size_t& lookAhead, USH& start);
+    void FillWindow(FILE* fIn, ULL& lookAhead, USH& start);
 
     //获取文件的后缀
     std::string GetStr(std::string filename);

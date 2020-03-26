@@ -1,7 +1,7 @@
-SRC=oj_server.cc 
-DES=oj_server
+SRC=main.cpp LZ77.cpp HashTable.cpp
+DES=test
 CC=g++
-FLAG=-std=c++11 -lpthread -L ./include/ctemplate/lib -lctemplate -L ./include/json/ -ljsoncpp
+FLAG=-std=c++11 -lpthread 
 
 $(DES):$(SRC)
 	$(CC) $^ -o $@ $(FLAG)
