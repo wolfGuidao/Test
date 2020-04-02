@@ -28,6 +28,7 @@
 #include <unordered_set>
 #include <algorithm>
 #include <mutex>
+#include <thread>
 #include <bitset>
 #include <memory>
 #include <memory.h>
@@ -39,6 +40,7 @@
 #include <exception>
 #include <forward_list>
 #include <ulimit.h>
+using namespace std;
 
 //Linux
 #include <sys/wait.h>

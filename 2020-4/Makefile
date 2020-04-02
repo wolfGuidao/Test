@@ -1,4 +1,4 @@
-SRC=_3-25.cpp
+SRC=4-2.cpp
 DES=test
 CC=g++
 FLAG=-std=c++11 
